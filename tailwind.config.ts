@@ -61,12 +61,27 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				brand: {
+					gold: 'hsl(var(--brand-gold))',
+					goldDeep: 'hsl(var(--brand-gold-deep))'
 				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			fontFamily: {
+				heading: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+				body: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif']
+			},
+			backgroundImage: {
+				'gold-gradient': 'var(--gradient-gold)',
+				'gold-vertical': 'var(--gradient-gold-vertical)'
+			},
+			boxShadow: {
+				glow: 'var(--shadow-glow)'
 			},
 			keyframes: {
 				'accordion-down': {
@@ -84,13 +99,18 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				float: {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-6px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				float: 'float 6s ease-in-out infinite'
 			}
-		}
-	},
-	plugins: [require("tailwindcss-animate")],
+	}
+},
+plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography')],
 } satisfies Config;

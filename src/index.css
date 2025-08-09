@@ -34,10 +34,21 @@ All colors MUST be HSL.
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Brand ring color set to gold */
+    --ring: 43 72% 62%;
 
     --radius: 0.5rem;
 
+    /* Brand tokens */
+    --brand-gold: 43 72% 62%; /* #E5BB57 */
+    --brand-gold-deep: 42 61% 35%; /* #906F23 */
+
+    /* Gradients & shadows */
+    --gradient-gold: linear-gradient(270deg, hsl(var(--brand-gold-deep)) 0%, hsl(var(--brand-gold)) 100%);
+    --gradient-gold-vertical: linear-gradient(180deg, hsl(var(--brand-gold)) 30%, hsl(var(--brand-gold-deep)) 100%);
+    --shadow-glow: 0 10px 30px -10px hsl(var(--brand-gold) / 0.35);
+
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
 
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -100,6 +111,28 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background-image: var(--gradient-gold-vertical);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-gold-gradient {
+    background-image: var(--gradient-gold);
+  }
+  .bg-gold-vertical {
+    background-image: var(--gradient-gold-vertical);
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
   }
 }
