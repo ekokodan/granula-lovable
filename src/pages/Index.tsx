@@ -134,8 +134,17 @@ const Index = () => {
               </p>
 
               <div className="mx-auto max-w-4xl rounded-md shadow-lg relative overflow-hidden">
-                <div className="aspect-video w-full bg-black/60 rounded-md grid place-items-center">
-                  <PlayCircle className="h-16 w-16 text-white/80" />
+                <div className="aspect-video w-full rounded-md relative">
+                  <img
+                    src="/lovable-uploads/ea3eeef8-6348-4492-81e1-7ab51f96dcde.png"
+                    alt="Granula dashboard preview showing tasks and metrics"
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/50" aria-hidden />
+                  <div className="absolute inset-0 grid place-items-center">
+                    <PlayCircle className="h-16 w-16 text-white/90" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -153,21 +162,21 @@ const Index = () => {
             </Button>
           </div>
           <div>
-            <Accordion type="single" collapsible className="w-full divide-y">
+            <Accordion type="single" collapsible defaultValue="item-1" className="w-full divide-y">
               <AccordionItem value="item-1">
-                <AccordionTrigger className="text-left">When will Granula launch?</AccordionTrigger>
+                <AccordionTrigger className="text-left data-[state=open]:text-brand-gold data-[state=open]:font-semibold">When will Granula launch?</AccordionTrigger>
                 <AccordionContent>Soon! Waitlist members get early access plus discounts.</AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
-                <AccordionTrigger className="text-left">How much will it cost?</AccordionTrigger>
+                <AccordionTrigger className="text-left data-[state=open]:text-brand-gold data-[state=open]:font-semibold">How much will it cost?</AccordionTrigger>
                 <AccordionContent>Free for basic features; premium plans start at ₦XY/month.</AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
-                <AccordionTrigger className="text-left">Is my data secure?</AccordionTrigger>
+                <AccordionTrigger className="text-left data-[state=open]:text-brand-gold data-[state=open]:font-semibold">Is my data secure?</AccordionTrigger>
                 <AccordionContent>Yes — we use industry best practices for encryption and secure sync.</AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4">
-                <AccordionTrigger className="text-left">Which countries are supported?</AccordionTrigger>
+                <AccordionTrigger className="text-left data-[state=open]:text-brand-gold data-[state=open]:font-semibold">Which countries are supported?</AccordionTrigger>
                 <AccordionContent>Nigeria at launch — more soon!</AccordionContent>
               </AccordionItem>
             </Accordion>
